@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_212944) do
     t.string "name"
     t.string "username"
     t.string "password"
-    t.string "type"
+    t.string "usertype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
