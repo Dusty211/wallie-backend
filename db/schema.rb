@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_212944) do
   create_table "jobs", force: :cascade do |t|
     t.boolean "active"
     t.boolean "accepted"
+    t.string "title"
     t.bigint "requester_id"
     t.bigint "requestee_id"
     t.datetime "created_at", null: false
@@ -28,7 +29,6 @@ ActiveRecord::Schema.define(version: 2019_03_21_212944) do
 
   create_table "messages", force: :cascade do |t|
     t.bigint "job_id"
-    t.string "title"
     t.text "content"
     t.bigint "user_id"
     t.datetime "created_at", null: false
