@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_212944) do
   end
 
   create_table "murals", force: :cascade do |t|
-    t.string "photo"
+    t.string "image"
     t.integer "rating"
     t.bigint "user_id"
     t.datetime "created_at", null: false

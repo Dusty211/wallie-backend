@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users, except: [:new, :edit]
+  resources :jobs, except: [:new, :edit, :index]
+  resources :murals, except: [:new, :edit]
+  resources :walls, except: [:new, :edit]
+  resources :messages, only: [:create, :show]
 end
