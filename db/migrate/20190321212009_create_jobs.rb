@@ -3,8 +3,8 @@ class CreateJobs < ActiveRecord::Migration[5.2]
     create_table :jobs do |t|
       t.boolean :active
       t.boolean :accepted
-      t.belongs_to :requester, foreign_key: true
-      t.belongs_to :requestee, foreign_key: true
+      t.belongs_to :requester
+      t.belongs_to :requestee
 
       t.timestamps
     end
