@@ -1,6 +1,11 @@
 class Api::V1::JobsController < ApplicationController
   def index
-    render json: Job.all
+    currUser = User.find(params[:user_id])
+    if currUser && currUser.usertype == "muralist"
+      render json: currUser.assignments
+    else
+      render json: currUser.offers
+    end
   end
 
   def create
@@ -21,6 +26,7 @@ class Api::V1::JobsController < ApplicationController
   end
 
   def show
+    currUser = User.find(params[:id])
     render json: Job.find(params[:id])
   end
 
