@@ -7,7 +7,8 @@ Rails.application.routes.draw do
       resources :messages, only: [:create, :show]
       resources :murals, except: [:new, :edit]
       resources :walls, except: [:new, :edit]
+      post '/login', to: 'auth#create'
       mount ActionCable.server => '/cable'
     end
-  end  
+  end
 end
