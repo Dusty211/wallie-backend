@@ -1,8 +1,10 @@
 class Api::V1::UsersController < ApplicationController
 
-  skip_before_action :authorized, only: [:create]
+  skip_before_action :authorized, only: [:create, :index]
 
   def profile
+
+    # token = request.headers["Authentication"].split(' ')[1]
     render json: { user: UserSerializer.new(current_user) }, status: :accepted
   end
 

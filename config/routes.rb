@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :murals, except: [:new, :edit]
       resources :walls, except: [:new, :edit]
       post '/login', to: 'auth#create'
+      get '/profile', to: 'users#profile'
       mount ActionCable.server => '/cable'
     end
   end
